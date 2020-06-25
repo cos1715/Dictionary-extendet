@@ -3,7 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { CONST } from '../const';
 import { ROUTES } from '../routes';
-import { HomeContainer } from '../containers/Home';
+import { HomeContainer } from '../containers/home';
 import MyVocabulary from '../containers/MyVocabulary';
 import Tests from '../containers/Tests';
 import NotFound from '../components/NotFound';

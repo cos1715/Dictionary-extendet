@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from '../words-list/node_modules/prop-types';
 
 import './WordPlate.css';
 
@@ -15,8 +15,8 @@ const WordPlate = props => {
   );
 };
 
-WordPlate.propTypes = {
-  element: PropTypes.object
-};
+// WordPlate.propTypes = {
+//   element: PropTypes.object
+// };
 
 export default WordPlate;

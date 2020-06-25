@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-import { ToastContainer } from 'react-toastify';
+import PropTypes from '../../components/words-list/node_modules/prop-types';
+import { ToastContainer } from '../../components/words-list/node_modules/react-toastify';
 
 import Header from '../../components/Header';
 import SideBar from '../../components/Sidebar';

@@ -5,8 +5,8 @@ import { testReducer } from './reducer-test';
 import { autoInputReducer } from './reducer-auto-input';
 
 export const rootReducer = combineReducers({
-  progressReducer,
-  testReducer,
-  autoInputReducer,
+  progress: progressReducer,
+  tests: testReducer,
+  autoInput: autoInputReducer,
   form: formReducer
 });

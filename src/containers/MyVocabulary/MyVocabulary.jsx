@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-import Zoom from 'react-reveal/Zoom';
+import PropTypes from '../../components/words-list/node_modules/prop-types';
+import Zoom from '../../components/words-list/node_modules/react-reveal/Zoom';
 import { animateScroll as scroll } from 'react-scroll';
 import Autosuggest from 'react-autosuggest';
 import Header from '../../components/Header';

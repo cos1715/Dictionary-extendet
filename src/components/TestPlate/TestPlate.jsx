@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
-import Zoom from 'react-reveal/Zoom';
+import PropTypes from '../words-list/node_modules/prop-types';
+import { toast } from '../words-list/node_modules/react-toastify';
+import Zoom from '../words-list/node_modules/react-reveal/Zoom';
 
 import './TestPlate.css';
 

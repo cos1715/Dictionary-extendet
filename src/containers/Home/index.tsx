@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
+import { IWord } from '../../assets/words';
 import { IInitialStore } from '../../store';
-import WordsList from '../../components/WordsList';
 import { learnedNewWord } from '../../actions/action-progress';
 import { LayoutMain } from '../../layout';
+import { CongratsMsg, WordsList } from '../../components';
 
 interface IStateProps {
-  progress: any;
+  learned: IWord[];
+  leftToLearn: IWord[];
 }
 
 interface IDispatchProps {
-  setLearnedNewWord: () => void;
+  setLearnedNewWord: (word: IWord) => void;
 }
 
 type IProps = IStateProps & IDispatchProps;
 
 const HomeContainerInternal: React.FC<IProps> = ({
-  progress,
+  learned,
+  leftToLearn,
   setLearnedNewWord
-}) => {
+}: IProps) => {
   return (
     <LayoutMain>
-      {/* <WordsList progress={progress} learnedNewWord={setLearnedNewWord} /> */}
+      {leftToLearn.length ? (
+        <WordsList
+          learned={learned}
+          leftToLearn={leftToLearn}
+          setLearnedNewWord={setLearnedNewWord}
+        />
+      ) : (
+        <CongratsMsg />
+      )}
     </LayoutMain>
   );
 };
@@ -37,7 +48,8 @@ const HomeContainerInternal: React.FC<IProps> = ({
 // };
 
 const mapStateToProps = (store: IInitialStore): IStateProps => ({
-  progress: store.progress
+  learned: store.progress.learned,
+  leftToLearn: store.progress.leftToLearn
 });
 
 const mapDispatchToProps: IDispatchProps = {
