@@ -6,7 +6,7 @@ import { IInitialStore } from '../../store';
 import Header from '../../components/Header';
 import SideBar from '../../components/Sidebar';
 import WordsList from '../../components/WordsList';
-import { learnedNewWord } from '../../actions/actionProgress';
+import { learnedNewWord } from '../../actions/action-progress';
 
 import './index.scss';
 

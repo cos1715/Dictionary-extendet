@@ -3,7 +3,7 @@ import {
   SUGGESTION_FETCH,
   SUGGESTION_CLEAR,
   SUGGESTION_CHOOSED
-} from '../actions/actionAutoInput';
+} from '../actions/action-auto-input';
 import { IAction } from '../models';
 
 export interface IAutoInputStore {

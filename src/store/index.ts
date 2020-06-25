@@ -1,9 +1,12 @@
-import { IProgressStore, progressInitStore } from '../reducers/reducerProgress';
-import { ITestsStore, testsInitStore } from '../reducers/reducerTest';
+import {
+  IProgressStore,
+  progressInitStore
+} from '../reducers/reducer-progress';
+import { ITestsStore, testsInitStore } from '../reducers/reducer-test';
 import {
   IAutoInputStore,
   autoInputInitStore
-} from '../reducers/reducerAutoInput';
+} from '../reducers/reducer-auto-input';
 
 export interface IInitialStore {
   progress: IProgressStore;

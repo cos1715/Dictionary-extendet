@@ -13,7 +13,7 @@ import {
   onSuggestionsFetchRequested,
   onSuggestionsClear,
   suggestionsChoosed
-} from '../../actions/actionAutoInput';
+} from '../../actions/action-auto-input';
 
 import './MyVocabulary.css';
 

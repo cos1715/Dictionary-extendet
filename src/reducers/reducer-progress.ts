@@ -1,4 +1,4 @@
-import { LEARNED_NEW_WORD } from '../actions/actionProgress';
+import { LEARNED_NEW_WORD } from '../actions/action-progress';
 import { words, IWord } from '../assets/words';
 import { IAction } from '../models';
 

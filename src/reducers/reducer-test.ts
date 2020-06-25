@@ -2,7 +2,7 @@ import {
   CORRECT_ANSWER,
   WRONG_ANSWER,
   START_AGAIN
-} from '../actions/actionTest';
+} from '../actions/action-test';
 import { IAction } from '../models';
 
 export interface ITestsStore {

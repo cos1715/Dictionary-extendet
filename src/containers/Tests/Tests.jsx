@@ -11,7 +11,7 @@ import {
   correctAnswer,
   wrongAnswer,
   startAgain
-} from '../../actions/actionTest';
+} from '../../actions/action-test';
 
 import './Tests.css';
 
