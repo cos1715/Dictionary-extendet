@@ -1,4 +1,7 @@
-import { LEARNED_NEW_WORD } from '../actions/action-progress';
+import {
+  LEARNED_NEW_WORD,
+  SET_LEARNED_NEW_WORD
+} from '../actions/action-progress';
 import { words } from '../assets/words';
 import { IAction, IWord } from '../models';
 
@@ -12,10 +15,16 @@ export const progressInitStore: IProgressStore = {
   learned: []
 };
 
-export const progressReducer = (state = progressInitStore, action: IAction) => {
+export const progressReducer = (
+  state = progressInitStore,
+  action: IAction<any>
+) => {
   switch (action.type) {
-    case LEARNED_NEW_WORD:
-      return { ...action.payload };
+    case SET_LEARNED_NEW_WORD:
+      return {
+        ...state,
+        learned: action.payload
+      };
     default:
       return state;
   }

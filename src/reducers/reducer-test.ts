@@ -15,7 +15,7 @@ export const testsInitStore: ITestsStore = {
   score: 0
 };
 
-export const testReducer = (state = testsInitStore, action: IAction) => {
+export const testReducer = (state = testsInitStore, action: IAction<any>) => {
   switch (action.type) {
     case CORRECT_ANSWER:
       return { ...state, score: action.payload };

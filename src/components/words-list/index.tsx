@@ -9,7 +9,6 @@ import { WordPlate } from '..';
 import './index.scss';
 
 interface IProps {
-  learned: IWord[];
   leftToLearn: IWord[];
   setLearnedNewWord: (word: IWord) => void;
 }
@@ -31,7 +30,6 @@ const nextWords = () => {
 };
 
 export const WordsList: React.FC<IProps> = ({
-  learned,
   leftToLearn,
   setLearnedNewWord
 }: IProps) => {
@@ -56,7 +54,7 @@ export const WordsList: React.FC<IProps> = ({
     <div>
       <div className="div-words-plate">{renderWords(wordsToLearn)}</div>
       <div className="div-words-btn">
-        <button className="btn-mark btn-next-words" onClick={nextWords}>
+        <button className="btn-mark btn-next-words pointer" onClick={nextWords}>
           Next Words
         </button>
       </div>

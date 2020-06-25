@@ -1,6 +1,6 @@
-export interface IAction {
+export interface IAction<T> {
   type: string;
-  payload: any;
+  payload: T;
 }
 
 export interface IWord {

@@ -20,7 +20,7 @@ export const autoInputInitStore: IAutoInputStore = {
 
 export const autoInputReducer = (
   state = autoInputInitStore,
-  action: IAction
+  action: IAction<any>
 ) => {
   switch (action.type) {
     case VALUE_CHANGE:

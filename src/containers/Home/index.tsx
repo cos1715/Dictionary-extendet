@@ -8,7 +8,6 @@ import { LayoutMain } from '../../layout';
 import { CongratsMsg, WordsList } from '../../components';
 
 interface IStateProps {
-  learned: IWord[];
   leftToLearn: IWord[];
 }
 
@@ -19,7 +18,6 @@ interface IDispatchProps {
 type IProps = IStateProps & IDispatchProps;
 
 const HomeContainerInternal: React.FC<IProps> = ({
-  learned,
   leftToLearn,
   setLearnedNewWord
 }: IProps) => {
@@ -27,7 +25,6 @@ const HomeContainerInternal: React.FC<IProps> = ({
     <LayoutMain>
       {leftToLearn.length ? (
         <WordsList
-          learned={learned}
           leftToLearn={leftToLearn}
           setLearnedNewWord={setLearnedNewWord}
         />
@@ -48,7 +45,6 @@ const HomeContainerInternal: React.FC<IProps> = ({
 // };
 
 const mapStateToProps = (store: IInitialStore): IStateProps => ({
-  learned: store.progress.learned,
   leftToLearn: store.progress.leftToLearn
 });
 
