@@ -4,14 +4,24 @@ import {
   SUGGESTION_CLEAR,
   SUGGESTION_CHOOSED
 } from "../actions/actionAutoInput";
+import { IAction } from "../models";
 
-const initState = {
-  value: '',
+export interface IAutoInputStore {
+  value: string;
+  suggestions: any[];
+  suggestionWord: any[];
+}
+
+export const autoInputInitStore: IAutoInputStore = {
+  value: "",
   suggestions: [],
   suggestionWord: []
 };
 
-export default (state = initState, action) => {
+export const autoInputReducer = (
+  state = autoInputInitStore,
+  action: IAction
+) => {
   switch (action.type) {
     case VALUE_CHANGE:
       return { ...state, value: action.payload };
@@ -23,7 +33,7 @@ export default (state = initState, action) => {
       suggestionWord.push(action.payload);
       return { ...state, suggestionWord: suggestionWord };
     case SUGGESTION_CLEAR:
-      return initState;
+      return autoInputInitStore;
     default:
       return state;
   }

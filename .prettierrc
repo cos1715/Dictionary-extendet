@@ -1,0 +1,31 @@
+{
+  "semi": true,
+  "printWidth": 80,
+  "trailingComma": "none",
+  "singleQuote": false,
+  "useTabs": false,
+  "tabWidth": 2,
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
+}
