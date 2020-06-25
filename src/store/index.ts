@@ -6,14 +6,14 @@ import {
 } from '../reducers/reducerAutoInput';
 
 export interface IInitialStore {
-  progress?: IProgressStore;
-  tests?: ITestsStore;
-  autoInput?: IAutoInputStore;
-  // form?: any
+  progress: IProgressStore;
+  tests: ITestsStore;
+  autoInput: IAutoInputStore;
+  form?: any;
 }
 
 export const initialStore: IInitialStore = {
-  // progress: progressInitStore,
-  // tests: testsInitStore,
-  // autoInput: autoInputInitStore
+  progress: progressInitStore,
+  tests: testsInitStore,
+  autoInput: autoInputInitStore
 };
