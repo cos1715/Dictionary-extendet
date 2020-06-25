@@ -1,8 +1,8 @@
-import { applyMiddleware, compose, createStore, Store, Action } from "redux";
-import createSagaMiddleware from "redux-saga";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { rootReducer } from "../reducers/index";
-import { initialStore } from "../store";
+import { applyMiddleware, compose, createStore, Store, Action } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { rootReducer } from '../reducers/index';
+import { initialStore } from '../store';
 
 const composeEnhancers =
   (window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;

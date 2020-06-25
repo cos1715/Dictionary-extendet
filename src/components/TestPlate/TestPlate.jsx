@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { toast } from "react-toastify";
-import Zoom from "react-reveal/Zoom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import Zoom from 'react-reveal/Zoom';
 
-import "./TestPlate.css";
+import './TestPlate.css';
 
 class TestPlate extends Component {
   checkTest = ({ key, target }, word) => {
     const points = 100;
     const lifePenalty = 1;
 
-    if (key === "Enter" && target.value) {
+    if (key === 'Enter' && target.value) {
       const { tests, correctAnswer, wrongAnswer } = this.props;
 
       if (target.value.trim().toLowerCase() === word.ukr) {
         const score = tests.score + points;
 
-        target.value = "";
-        toast.success("Correct");
+        target.value = '';
+        toast.success('Correct');
         correctAnswer(score);
       } else {
         const lives = tests.lives - lifePenalty;
 
-        target.value = "";
-        toast.error("Wrong!");
+        target.value = '';
+        toast.error('Wrong!');
         wrongAnswer(lives);
       }
     }

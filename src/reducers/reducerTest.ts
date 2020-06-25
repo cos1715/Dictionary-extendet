@@ -2,8 +2,8 @@ import {
   CORRECT_ANSWER,
   WRONG_ANSWER,
   START_AGAIN
-} from "../actions/actionTest";
-import { IAction } from "../models";
+} from '../actions/actionTest';
+import { IAction } from '../models';
 
 export interface ITestsStore {
   lives: number;

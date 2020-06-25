@@ -3,8 +3,8 @@ import {
   SUGGESTION_FETCH,
   SUGGESTION_CLEAR,
   SUGGESTION_CHOOSED
-} from "../actions/actionAutoInput";
-import { IAction } from "../models";
+} from '../actions/actionAutoInput';
+import { IAction } from '../models';
 
 export interface IAutoInputStore {
   value: string;
@@ -13,7 +13,7 @@ export interface IAutoInputStore {
 }
 
 export const autoInputInitStore: IAutoInputStore = {
-  value: "",
+  value: '',
   suggestions: [],
   suggestionWord: []
 };

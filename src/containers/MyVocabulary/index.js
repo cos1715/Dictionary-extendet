@@ -1,2 +1,2 @@
-import MyVocabulary from "./MyVocabulary";
+import MyVocabulary from './MyVocabulary';
 export default MyVocabulary;

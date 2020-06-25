@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./WordPlate.css";
+import './WordPlate.css';
 
 const WordPlate = props => {
   const { element } = props;

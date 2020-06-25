@@ -1,7 +1,7 @@
-export const VALUE_CHANGE = "VALUE_CHANGE";
-export const SUGGESTION_FETCH = "SUGGESTION_FETCH";
-export const SUGGESTION_CLEAR = "SUGGESTION_CLEAR";
-export const SUGGESTION_CHOOSED = "SUGGESTION_CHOOSED";
+export const VALUE_CHANGE = 'VALUE_CHANGE';
+export const SUGGESTION_FETCH = 'SUGGESTION_FETCH';
+export const SUGGESTION_CLEAR = 'SUGGESTION_CLEAR';
+export const SUGGESTION_CHOOSED = 'SUGGESTION_CHOOSED';
 
 export const valueChange = value => {
   return {

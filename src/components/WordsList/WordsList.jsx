@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { toast } from "react-toastify";
-import Zoom from "react-reveal/Zoom";
-import { animateScroll as scroll } from "react-scroll";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import Zoom from 'react-reveal/Zoom';
+import { animateScroll as scroll } from 'react-scroll';
 
-import WordPlate from "../WordPlate";
+import WordPlate from '../WordPlate';
 
-import "./WordsList.css";
+import './WordsList.css';
 
 class WordsList extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class WordsList extends Component {
 
       leftToLearn.splice(index, 1);
       learned.push(word);
-      toast.info("Added to vocabulary");
+      toast.info('Added to vocabulary');
       learnedNewWord(this.cloneProgress);
     }
   };

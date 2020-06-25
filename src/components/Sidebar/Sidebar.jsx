@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import "./Sidebar.css";
+import './Sidebar.css';
 
 export const Sidebar = () => {
   return (

@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
-import { ToastContainer } from "react-toastify";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { ToastContainer } from 'react-toastify';
 
-import Header from "../../components/Header";
-import SideBar from "../../components/Sidebar";
-import TestPlate from "../../components/TestPlate";
+import Header from '../../components/Header';
+import SideBar from '../../components/Sidebar';
+import TestPlate from '../../components/TestPlate';
 import {
   correctAnswer,
   wrongAnswer,
   startAgain
-} from "../../actions/actionTest";
+} from '../../actions/actionTest';
 
-import "./Tests.css";
+import './Tests.css';
 
 class Tests extends Component {
   getWord = learnedWords => {

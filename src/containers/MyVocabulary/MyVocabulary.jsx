@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
-import Zoom from "react-reveal/Zoom";
-import { animateScroll as scroll } from "react-scroll";
-import Autosuggest from "react-autosuggest";
-import Header from "../../components/Header";
-import SideBar from "../../components/Sidebar";
-import WordPlate from "../../components/WordPlate";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import Zoom from 'react-reveal/Zoom';
+import { animateScroll as scroll } from 'react-scroll';
+import Autosuggest from 'react-autosuggest';
+import Header from '../../components/Header';
+import SideBar from '../../components/Sidebar';
+import WordPlate from '../../components/WordPlate';
 import {
   valueChange,
   onSuggestionsFetchRequested,
   onSuggestionsClear,
   suggestionsChoosed
-} from "../../actions/actionAutoInput";
+} from '../../actions/actionAutoInput';
 
-import "./MyVocabulary.css";
+import './MyVocabulary.css';
 
 class MyVocabulary extends Component {
   constructor(props) {
     super(props);
-    this.lang = "";
+    this.lang = '';
   }
 
   getSuggestions = (value, learned) => {
@@ -29,9 +29,9 @@ class MyVocabulary extends Component {
     const engDetection = /^[a-zA-Z]+$/;
 
     if (engDetection.test(inputValue)) {
-      this.lang = "eng";
+      this.lang = 'eng';
     } else {
-      this.lang = "ukr";
+      this.lang = 'ukr';
     }
 
     return inputLength === 0
@@ -70,7 +70,7 @@ class MyVocabulary extends Component {
 
   renderSearchInput = (learned, autoInput, onSuggestionsClear) => {
     const inputProps = {
-      placeholder: "Search",
+      placeholder: 'Search',
       value: autoInput.value,
       onChange: this.handleInputChange
     };
