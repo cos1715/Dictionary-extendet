@@ -2,12 +2,11 @@ import React, { Component, useState } from 'react';
 import { toast } from 'react-toastify';
 // import Zoom from 'react-reveal/Zoom';
 import { animateScroll as scroll } from 'react-scroll';
-import { IWord } from '../../assets/words';
-
-import WordPlate from '../WordPlate';
+import { CONST } from '../../const';
+import { IWord } from '../../models';
+import { WordPlate } from '..';
 
 import './index.scss';
-import { CONST } from '../../const';
 
 interface IProps {
   learned: IWord[];
@@ -37,9 +36,6 @@ export const WordsList: React.FC<IProps> = ({
   setLearnedNewWord
 }: IProps) => {
   const wordsToLearn = getWordsToLearn(leftToLearn);
-  const [state, setState] = useState<IState>({
-    wordsToLearn: getWordsToLearn(leftToLearn)
-  });
 
   const markAsLearned = (word: IWord) => () => {
     toast.info('Added to vocabulary');
@@ -50,7 +46,7 @@ export const WordsList: React.FC<IProps> = ({
     return wordsToLearn.map(word => (
       // <Zoom key={`word-list-${word.eng}`}>
       <button className="word-plate pointer" onClick={markAsLearned(word)}>
-        <WordPlate element={word} />
+        <WordPlate word={word} />
       </button>
       // </Zoom>
     ));

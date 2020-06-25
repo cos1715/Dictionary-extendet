@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-import { IWord } from '../../assets/words';
+import { IWord } from '../../models';
 import { IInitialStore } from '../../store';
 import { learnedNewWord } from '../../actions/action-progress';
 import { LayoutMain } from '../../layout';

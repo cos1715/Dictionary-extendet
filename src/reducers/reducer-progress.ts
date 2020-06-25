@@ -1,6 +1,6 @@
 import { LEARNED_NEW_WORD } from '../actions/action-progress';
-import { words, IWord } from '../assets/words';
-import { IAction } from '../models';
+import { words } from '../assets/words';
+import { IAction, IWord } from '../models';
 
 export interface IProgressStore {
   leftToLearn: IWord[];

@@ -1,8 +1,4 @@
-export interface IWord {
-  eng: string;
-  ukr: string;
-  definition: string;
-}
+import { IWord } from '../models';
 
 export const words: IWord[] = [
   {
