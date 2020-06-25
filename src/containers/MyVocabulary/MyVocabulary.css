@@ -1,7 +1,7 @@
 .scroll-plate {
   margin: 20px;
   padding: 10px;
-  border: 3px solid #4CAF50;
+  border: 3px solid #4caf50;
   border-radius: 5px;
   position: fixed;
   bottom: 50px;
@@ -9,7 +9,7 @@
   color: #fff;
   text-transform: capitalize;
   text-align: center;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   cursor: pointer;
   transition: all 1s;
 }
@@ -30,18 +30,18 @@
 
 .btn-clear {
   padding: 10px;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: transparent;
   font-size: 20px;
-  color: #4CAF50;
+  color: #4caf50;
   text-decoration: none;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .btn-clear:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
 }
 

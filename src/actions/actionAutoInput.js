@@ -30,4 +30,3 @@ export const suggestionsChoosed = value => {
     payload: value
   };
 };
-

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import PropTypes from 'prop-types';
-import Zoom from 'react-reveal/Zoom';
-import { animateScroll as scroll } from 'react-scroll';
-import Autosuggest from 'react-autosuggest';
+import PropTypes from "prop-types";
+import Zoom from "react-reveal/Zoom";
+import { animateScroll as scroll } from "react-scroll";
+import Autosuggest from "react-autosuggest";
 import Header from "../../components/Header";
 import SideBar from "../../components/Sidebar";
 import WordPlate from "../../components/WordPlate";
@@ -13,14 +13,14 @@ import {
   onSuggestionsFetchRequested,
   onSuggestionsClear,
   suggestionsChoosed
-} from '../../actions/actionAutoInput'
+} from "../../actions/actionAutoInput";
 
 import "./MyVocabulary.css";
 
 class MyVocabulary extends Component {
   constructor(props) {
     super(props);
-    this.lang = '';
+    this.lang = "";
   }
 
   getSuggestions = (value, learned) => {
@@ -29,14 +29,17 @@ class MyVocabulary extends Component {
     const engDetection = /^[a-zA-Z]+$/;
 
     if (engDetection.test(inputValue)) {
-      this.lang = 'eng';
+      this.lang = "eng";
     } else {
-      this.lang = 'ukr'
+      this.lang = "ukr";
     }
 
-    return inputLength === 0 ? [] : learned.filter(lang =>
-      lang[this.lang].toLowerCase().slice(0, inputLength) === inputValue
-    );
+    return inputLength === 0
+      ? []
+      : learned.filter(
+          lang =>
+            lang[this.lang].toLowerCase().slice(0, inputLength) === inputValue
+        );
   };
 
   getSuggestionValue = suggestion => {
@@ -46,9 +49,7 @@ class MyVocabulary extends Component {
     return suggestion[this.lang];
   };
 
-  renderSuggestion = suggestion => (
-    <span>{suggestion[this.lang]}</span>
-  );
+  renderSuggestion = suggestion => <span>{suggestion[this.lang]}</span>;
 
   handleInputChange = (event, { newValue }) => {
     const { valueChange } = this.props;
@@ -65,11 +66,11 @@ class MyVocabulary extends Component {
 
   onSuggestionsClearRequested = () => {
     return null;
-  }
+  };
 
   renderSearchInput = (learned, autoInput, onSuggestionsClear) => {
     const inputProps = {
-      placeholder: 'Search',
+      placeholder: "Search",
       value: autoInput.value,
       onChange: this.handleInputChange
     };
@@ -85,11 +86,13 @@ class MyVocabulary extends Component {
             renderSuggestion={this.renderSuggestion}
             inputProps={inputProps}
           />
-          <button className="btn-clear" onClick={onSuggestionsClear}><i className="far fa-trash-alt"></i></button>
+          <button className="btn-clear" onClick={onSuggestionsClear}>
+            <i className="far fa-trash-alt"></i>
+          </button>
         </div>
       );
     }
-  }
+  };
 
   renderScrollBtn = learned => {
     const minWordsToScroll = 15;
@@ -105,8 +108,7 @@ class MyVocabulary extends Component {
         </Zoom>
       );
     }
-
-  }
+  };
 
   renderVocabularyWords = learned => {
     if (!learned.length) {
@@ -118,13 +120,13 @@ class MyVocabulary extends Component {
     } else {
       return learned.map(element => (
         <Zoom key={`vocabulary-list-${element.eng}`}>
-          <div className="word-plate" >
+          <div className="word-plate">
             <WordPlate element={element} />
           </div>
         </Zoom>
       ));
     }
-  }
+  };
 
   render() {
     const { progress, autoInput, onSuggestionsClear } = this.props;
@@ -136,13 +138,15 @@ class MyVocabulary extends Component {
           <SideBar />
           {this.renderScrollBtn(progress.learned)}
           <main className="app-main">
-            {this.renderSearchInput(progress.learned, autoInput, onSuggestionsClear)}
+            {this.renderSearchInput(
+              progress.learned,
+              autoInput,
+              onSuggestionsClear
+            )}
             <div className="div-words-plate">
-              {
-                autoInput.suggestionWord.length ?
-                  this.renderVocabularyWords(autoInput.suggestionWord) :
-                  this.renderVocabularyWords(progress.learned)
-              }
+              {autoInput.suggestionWord.length
+                ? this.renderVocabularyWords(autoInput.suggestionWord)
+                : this.renderVocabularyWords(progress.learned)}
             </div>
           </main>
         </div>
@@ -156,7 +160,7 @@ const mapStateToProps = state => {
     progress: state.progress,
     autoInput: state.autoInput
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
@@ -179,7 +183,4 @@ MyVocabulary.propTypes = {
   suggestionsChoosed: PropTypes.func
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyVocabulary);
+export default connect(mapStateToProps, mapDispatchToProps)(MyVocabulary);

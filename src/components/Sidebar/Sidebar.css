@@ -10,7 +10,7 @@
 
 .navLink-selected:nth-of-type(2n) {
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .navLink-selected:nth-of-type(3n) {
@@ -21,7 +21,7 @@
 .sidebar-link {
   color: #fff;
   text-decoration: none;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .sidebar-nav a {

@@ -10,15 +10,15 @@
 
 .not-found-link {
   padding: 10px;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
   border-radius: 5px;
   font-size: 20px;
-  color: #4CAF50;
+  color: #4caf50;
   text-decoration: none;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .not-found-link:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
 }

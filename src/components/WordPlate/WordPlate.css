@@ -17,8 +17,8 @@
 }
 
 .word-plate:nth-of-type(2n) {
-  border: 3px solid #4CAF50;
-  background-color: #4CAF50;
+  border: 3px solid #4caf50;
+  background-color: #4caf50;
 }
 
 .word-plate:nth-of-type(2n):focus {

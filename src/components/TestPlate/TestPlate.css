@@ -2,7 +2,7 @@
   margin: 20px;
   padding: 20px;
   font-size: 30px;
-  color: #4CAF50;
+  color: #4caf50;
   text-transform: capitalize;
 }
 
@@ -31,11 +31,11 @@
 
 .test-input {
   border: none;
-  border-bottom: 3px solid #4CAF50;
+  border-bottom: 3px solid #4caf50;
   background-color: transparent;
   font-size: 30px;
   text-align: center;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .test-input:focus {
@@ -56,17 +56,17 @@
 .test-btn {
   margin: 20px 40px;
   padding: 10px;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
   border-radius: 5px;
   background-color: transparent;
   font-size: 20px;
-  color: #4CAF50;
+  color: #4caf50;
   text-transform: capitalize;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .test-btn:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
 }
 

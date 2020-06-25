@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { toast } from "react-toastify";
-import Zoom from 'react-reveal/Zoom';
-import { animateScroll as scroll } from 'react-scroll';
+import Zoom from "react-reveal/Zoom";
+import { animateScroll as scroll } from "react-scroll";
 
 import WordPlate from "../WordPlate";
 
@@ -27,7 +27,7 @@ class WordsList extends Component {
     this.wordsToLearn = this.getWordsToLearn(progress.leftToLearn);
     scroll.scrollToTop();
     learnedNewWord(this.cloneProgress);
-  }
+  };
 
   markAsLearned = word => {
     const { learnedNewWord } = this.props;
@@ -38,10 +38,10 @@ class WordsList extends Component {
 
       leftToLearn.splice(index, 1);
       learned.push(word);
-      toast.info('Added to vocabulary');
+      toast.info("Added to vocabulary");
       learnedNewWord(this.cloneProgress);
     }
-  }
+  };
 
   getWordsToLearn = words => {
     const wordsToLearn = [];
@@ -52,22 +52,27 @@ class WordsList extends Component {
 
     while (indexes.size !== numberToDisplay) {
       indexes.add(Math.floor(Math.random() * words.length));
-    };
+    }
     indexes.forEach(i => {
       return wordsToLearn.push(words[i]);
     });
     return wordsToLearn;
-  }
+  };
 
   renderWords = () => {
     return this.wordsToLearn.map(element => (
       <Zoom key={`word-list-${element.eng}`}>
-        <button className="word-plate pointer" onClick={() => { this.markAsLearned(element) }}>
+        <button
+          className="word-plate pointer"
+          onClick={() => {
+            this.markAsLearned(element);
+          }}
+        >
           <WordPlate element={element} />
         </button>
-      </Zoom >
+      </Zoom>
     ));
-  }
+  };
 
   render() {
     const { progress } = this.props;
@@ -75,17 +80,22 @@ class WordsList extends Component {
     if (!progress.leftToLearn.length) {
       return (
         <div className="notify-msg">
-          <h1>Guess you learned all the words <i class="fas fa-award"></i></h1>
+          <h1>
+            Guess you learned all the words <i class="fas fa-award"></i>
+          </h1>
         </div>
       );
     } else {
       return (
         <div>
-          <div className="div-words-plate">
-            {this.renderWords()}
-          </div>
+          <div className="div-words-plate">{this.renderWords()}</div>
           <div className="div-words-btn">
-            <button className="btn-mark btn-next-words" onClick={this.nextWords}>Next Words</button>
+            <button
+              className="btn-mark btn-next-words"
+              onClick={this.nextWords}
+            >
+              Next Words
+            </button>
           </div>
         </div>
       );

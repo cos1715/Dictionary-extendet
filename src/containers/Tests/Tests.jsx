@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { ToastContainer } from "react-toastify";
 
 import Header from "../../components/Header";
 import SideBar from "../../components/Sidebar";
 import TestPlate from "../../components/TestPlate";
-import { correctAnswer, wrongAnswer, startAgain } from "../../actions/actionTest";
+import {
+  correctAnswer,
+  wrongAnswer,
+  startAgain
+} from "../../actions/actionTest";
 
 import "./Tests.css";
 
 class Tests extends Component {
-  getWord = (learnedWords) => {
+  getWord = learnedWords => {
     const index = Math.floor(Math.random() * learnedWords.length);
     return learnedWords[index];
-  }
+  };
 
   render() {
     const {
@@ -64,7 +68,7 @@ const mapStateToProps = state => {
     progress: state.progress,
     tests: state.tests
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
@@ -85,7 +89,4 @@ Tests.propTypes = {
   startAgain: PropTypes.func
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Tests);
+export default connect(mapStateToProps, mapDispatchToProps)(Tests);
