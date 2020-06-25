@@ -1,5 +1,5 @@
 import {
-  LEARNED_NEW_WORD,
+  UPDATED_LEFT_TO_LEARN_WORDS,
   SET_LEARNED_NEW_WORD
 } from '../actions/action-progress';
 import { words } from '../assets/words';
@@ -23,7 +23,12 @@ export const progressReducer = (
     case SET_LEARNED_NEW_WORD:
       return {
         ...state,
-        learned: action.payload
+        learned: action.payload || []
+      };
+    case UPDATED_LEFT_TO_LEARN_WORDS:
+      return {
+        ...state,
+        leftToLearn: action.payload || []
       };
     default:
       return state;

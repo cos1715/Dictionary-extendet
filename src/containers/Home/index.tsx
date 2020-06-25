@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 import { IWord } from '../../models';
 import { IInitialStore } from '../../store';
-import { learnedNewWord } from '../../actions/action-progress';
+import {
+  learnedNewWord,
+  updateLeftToLearn
+} from '../../actions/action-progress';
 import { LayoutMain } from '../../layout';
 import { CongratsMsg, WordsList } from '../../components';
 
@@ -13,13 +16,15 @@ interface IStateProps {
 
 interface IDispatchProps {
   setLearnedNewWord: (word: IWord) => void;
+  updateLeftToLearn: () => void;
 }
 
 type IProps = IStateProps & IDispatchProps;
 
 const HomeContainerInternal: React.FC<IProps> = ({
   leftToLearn,
-  setLearnedNewWord
+  setLearnedNewWord,
+  updateLeftToLearn
 }: IProps) => {
   return (
     <LayoutMain>
@@ -27,6 +32,7 @@ const HomeContainerInternal: React.FC<IProps> = ({
         <WordsList
           leftToLearn={leftToLearn}
           setLearnedNewWord={setLearnedNewWord}
+          updateLeftToLearn={updateLeftToLearn}
         />
       ) : (
         <CongratsMsg />
@@ -49,7 +55,8 @@ const mapStateToProps = (store: IInitialStore): IStateProps => ({
 });
 
 const mapDispatchToProps: IDispatchProps = {
-  setLearnedNewWord: learnedNewWord
+  setLearnedNewWord: learnedNewWord,
+  updateLeftToLearn
 };
 
 export const HomeContainer = connect(

@@ -11,10 +11,7 @@ import './index.scss';
 interface IProps {
   leftToLearn: IWord[];
   setLearnedNewWord: (word: IWord) => void;
-}
-
-interface IState {
-  wordsToLearn: IWord[];
+  updateLeftToLearn: () => void;
 }
 
 const getWordsToLearn = (words: IWord[]) => {
@@ -25,15 +22,17 @@ const getWordsToLearn = (words: IWord[]) => {
   return words.slice(0, wordsToDisplay);
 };
 
-const nextWords = () => {
-  scroll.scrollToTop();
-};
-
 export const WordsList: React.FC<IProps> = ({
   leftToLearn,
-  setLearnedNewWord
+  setLearnedNewWord,
+  updateLeftToLearn
 }: IProps) => {
   const wordsToLearn = getWordsToLearn(leftToLearn);
+
+  const nextWords = () => {
+    updateLeftToLearn();
+    scroll.scrollToTop();
+  };
 
   const markAsLearned = (word: IWord) => () => {
     toast.info('Added to vocabulary');
@@ -42,11 +41,13 @@ export const WordsList: React.FC<IProps> = ({
 
   const renderWords = (wordsToLearn: IWord[]) => {
     return wordsToLearn.map(word => (
-      // <Zoom key={`word-list-${word.eng}`}>
-      <button className="word-plate pointer" onClick={markAsLearned(word)}>
+      <button
+        key={`word-list-${word.eng}`}
+        className="word-plate pointer zoom"
+        onClick={markAsLearned(word)}
+      >
         <WordPlate word={word} />
       </button>
-      // </Zoom>
     ));
   };
 

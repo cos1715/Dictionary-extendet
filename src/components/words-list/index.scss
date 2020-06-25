@@ -31,3 +31,16 @@
 .pointer {
   cursor: pointer;
 }
+
+.zoom {
+  animation: Zoom 1s ease;
+}
+
+@keyframes Zoom {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

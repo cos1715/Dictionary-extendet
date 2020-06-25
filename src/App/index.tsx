@@ -27,11 +27,12 @@ export const App: React.FC = () => (
     <ToastContainer
       position="top-right"
       autoClose={CONST.snackbarAutoClose}
-      hideProgressBar
-      closeOnClick
+      hideProgressBar={true}
+      closeOnClick={true}
       rtl={false}
-      draggable
-      pauseOnHover
+      draggable={true}
+      pauseOnHover={true}
+      limit={CONST.snackbarLimit}
     />
   </>
 );
