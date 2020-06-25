@@ -17,15 +17,15 @@
   font-size: 20px;
   color: #4caf50;
   transition: all 0.5s;
-}
 
-.btn-next-words:hover {
-  background-color: #4caf50;
-  color: #fff;
-}
+  &:hover {
+    background-color: #4caf50;
+    color: #fff;
+  }
 
-.btn-next-words:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .pointer {
@@ -40,6 +40,7 @@
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
