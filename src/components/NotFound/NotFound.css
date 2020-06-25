@@ -1,0 +1,24 @@
+.not-found-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.not-found-sign {
+  font-size: 200px;
+}
+
+.not-found-link {
+  padding: 10px;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #4CAF50;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.not-found-link:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}

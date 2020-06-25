@@ -1,0 +1,12 @@
+.app {
+  text-align: left;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-main {
+  width: 90vw;
+}

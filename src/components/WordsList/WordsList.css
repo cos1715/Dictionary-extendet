@@ -1,0 +1,33 @@
+.div-words-plate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-words-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next-words {
+  margin: 20px 40px;
+  padding: 10px;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 20px;
+  color: #4CAF50;
+  transition: all .5s;
+}
+
+.btn-next-words:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-next-words:focus {
+  outline: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
